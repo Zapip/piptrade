@@ -1,7 +1,7 @@
-<template lang="">
-  <div> test dada,a nadoadj adn
-
-  </div>
+<template>
+  <section class="flex  ">
+    <h1>Overview</h1>
+  </section>
 </template>
 <script>
 export default {

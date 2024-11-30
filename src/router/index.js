@@ -48,16 +48,26 @@ const router = createRouter({
           name: 'Over View',
           component: OverviewView, // Halaman "Overview"
         },
-        // {
-        //   path: 'settings',
-        //   name: 'settings',
-        //   component: SettingsView, // Halaman "Settings"
-        // },
-        // {
-        //   path: 'user-settings',
-        //   name: 'user-settings',
-        //   component: UserSettingsView, // Halaman "User Settings"
-        // },
+        {
+          path: '/input-transactions-stock',
+          name: 'Input Transactions Stock',
+          component: OverviewView, // Halaman "Overview"
+        },
+        {
+          path: '/input-transactions-crypto',
+          name: 'Input Transactions Crypto',
+          component: OverviewView, // Halaman "Overview"
+        },
+        {
+          path: '/overview',
+          name: 'Over View',
+          component: OverviewView, // Halaman "Overview"
+        },
+        {
+          path: '/overview',
+          name: 'Over View',
+          component: OverviewView, // Halaman "Overview"
+        },
       ],
     },
     {
