@@ -11,9 +11,11 @@
 
 <script>
 import { SunIcon, MoonIcon } from "@heroicons/vue/24/solid";
+
 export default {
   components: {
-    SunIcon, MoonIcon
+    SunIcon,
+    MoonIcon,
   },
   data() {
     return {
@@ -21,7 +23,15 @@ export default {
     };
   },
   mounted() {
-    this.isDarkMode = document.body.classList.contains("dark");
+    // Cek preferensi dark mode di localStorage
+    const savedDarkMode = localStorage.getItem("darkMode");
+    if (savedDarkMode === "true" || (!savedDarkMode && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      this.isDarkMode = true;
+      document.body.classList.add("dark");
+    } else {
+      this.isDarkMode = false;
+      document.body.classList.remove("dark");
+    }
   },
   methods: {
     toggleDarkMode() {
@@ -29,8 +39,10 @@ export default {
 
       if (this.isDarkMode) {
         document.body.classList.add("dark");
+        localStorage.setItem("darkMode", "true"); // Simpan preferensi ke localStorage
       } else {
         document.body.classList.remove("dark");
+        localStorage.setItem("darkMode", "false"); // Simpan preferensi ke localStorage
       }
     },
   },

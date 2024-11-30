@@ -1,23 +1,64 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LandingPage from '@/views/LandingPageView.vue'
+import DashboardLayoutView from '@/layouts/DashboardLayoutView.vue'
+import OverviewView from '@/views/dashboard/OverviewView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'LandingPage',
+      name: 'Landing Page',
       component: LandingPage,
     },
     {
       path: '/signin',
-      name: 'signin',
+      name: 'Sign In',
       component: () => import('../views/auth/SignIn.vue'),
     },
     {
       path: '/signup',
-      name: 'signup',
+      name: 'Sign Up',
       component: () => import('../views/auth/SignUp.vue'),
+    },
+    {
+      path: '/forgot-password',
+      name: 'Forgot Password',
+      component: () => import('../views/auth/ForgotPasswordView.vue'),
+    },
+    {
+      path: '/forgot-password/enter-code',
+      name: 'Enter Code',
+      component: () => import('../views/auth/EnterCodeView.vue'),
+    },
+    {
+      path: '/forgot-password/set-new-password',
+      name: 'Set New Password',
+      component: () => import('../views/auth/SetNewPasswordView.vue'),
+    },
+    // dashboard routes
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      redirect: '/overview',
+      component: DashboardLayoutView,
+      children: [
+        {
+          path: '/overview',
+          name: 'Over View',
+          component: OverviewView, // Halaman "Overview"
+        },
+        // {
+        //   path: 'settings',
+        //   name: 'settings',
+        //   component: SettingsView, // Halaman "Settings"
+        // },
+        // {
+        //   path: 'user-settings',
+        //   name: 'user-settings',
+        //   component: UserSettingsView, // Halaman "User Settings"
+        // },
+      ],
     },
     {
       path: '/:catchAll(.*)',
