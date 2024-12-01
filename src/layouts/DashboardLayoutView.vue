@@ -16,14 +16,14 @@
             'group flex gap-4 items-center text-sm font-medium rounded-md transition-colors duration-150 ease-in-out pr-5']">
           <!-- Kondisi Warna Sidebar Aktif / Non-aktif -->
           <div :class="[
-            item.current ? 'bg-buttonHover' : 'bg-background dark:bg-background-dark',
+            isActive(item.to) ? 'bg-buttonHover' : 'bg-background dark:bg-background-dark',
             'w-2 self-stretch rounded-tr-lg rounded-br-lg transition-colors duration-150 ease-in-out'
           ]"></div>
           <span class="w-full truncate transition-opacity duration-300 p-3 flex rounded-lg gap-2 items-center"
-            :class="item.current ? 'bg-buttonHover text-white' : 'text-t1 dark:text-t1-dark hover:bg-blue-50 hover:text-buttonHover dark:hover:text-buttonHover dark:hover:bg-fourground-dark'">
+            :class="isActive(item.to) ? 'bg-buttonHover text-white' : 'text-t1 dark:text-t1-dark hover:text-buttonHover dark:hover:text-buttonHover hover:bg-blue-50 dark:hover:bg-fourground-dark'">
             <!-- Warna Icon Collapse / Non-collapse -->
             <component :is="item.icon" class="flex-shrink-0 h-5 w-5" :class="[
-              item.current
+              isActive(item.to)
                 ? 'text-white '
                 : isCollapsed
                   ? 'text-t1 dark:text-t1-dark'
@@ -55,9 +55,9 @@
     </aside>
 
     <!-- Main Content -->
-    <div class="transition-all duration-300 ease-in-out" :class="[isCollapsed ? 'ml-16' : 'ml-64']">
+    <section class="transition-all duration-300 ease-in-out" :class="[isCollapsed ? 'ml-16' : 'ml-64']">
       <!-- Navbar -->
-      <header class="h-fit  px-9 py-2 bg-background dark:bg-background-dark flex items-center justify-between">
+      <header class="h-fit w-full px-9 py-2 bg-background dark:bg-background-dark flex items-center justify-between">
         <nav class="flex items-center">
           <button @click="toggleSidebar"
             class="p-2 rounded-md text-button hover:text-buttonHover hover:bg-input focus:outline-none">
@@ -81,10 +81,10 @@
       </header>
 
       <!-- Page Content -->
-      <main class="pt-6 pb-3 px-6" :class="isCollapsed ? 'px-12' : ''">
+      <main class="pt-6 pb-3 px-12">
         <router-view></router-view>
       </main>
-    </div>
+    </section>
   </main>
 </template>
 
@@ -94,23 +94,23 @@ import { Bars3CenterLeftIcon } from '@heroicons/vue/24/solid';
 import HorizontalLogoView from '@/assets/icons/HorizontalLogoView.vue';
 import { ref } from 'vue'
 import { ChartPieIcon, DocumentIcon, WalletIcon, CurrencyDollarIcon, DocumentChartBarIcon, BookOpenIcon, AcademicCapIcon, ArrowLeftEndOnRectangleIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
-
+import { useRoute } from 'vue-router';
 
 const isCollapsed = ref(false)
+const route = useRoute()
 
 const menuItems = [
-  { name: 'Overview', to: 'fa', icon: ChartPieIcon, current: true },
-  { name: 'Input Transaction Stock', to: 'fa', icon: DocumentIcon, current: false },
-  { name: 'Input Transaction Crypto', to: 'fa', icon: WalletIcon, current: false },
-  { name: 'Input Transaction Forex', to: 'fa', icon: CurrencyDollarIcon, current: false },
-  { name: 'Running Transaction', to: 'fa', icon: DocumentChartBarIcon, current: false },
-  { name: 'Journal', to: 'fa', icon: BookOpenIcon, current: false },
-  { name: 'Education', to: 'fa', icon: AcademicCapIcon, current: false },
-  // { name: 'Sign Out', to: '/', icon: HomeIcon, current: false },
+  { name: 'Overview', to: '/overview', icon: ChartPieIcon },
+  { name: 'Input Transaction Stock', to: '/input-transactions-stock', icon: DocumentIcon },
+  { name: 'Input Transaction Crypto', to: '/input-transactions-crypto', icon: WalletIcon },
+  { name: 'Input Transaction Forex', to: '/input-transactions-forex', icon: CurrencyDollarIcon },
+  { name: 'Running Transaction', to: '/running-transactions', icon: DocumentChartBarIcon },
+  { name: 'Journal', to: '/journals', icon: BookOpenIcon },
+  { name: 'Education', to: '/education', icon: AcademicCapIcon },
 ]
 
 const profilItem = { name: 'M. Zafif Hilmi Al-hadi', email: 'zafif3165@gmail.com' }
-
+const isActive = (itemTo) => route.path === itemTo;
 
 const toggleSidebar = () => {
   isCollapsed.value = !isCollapsed.value

@@ -2,6 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LandingPage from '@/views/LandingPageView.vue'
 import DashboardLayoutView from '@/layouts/DashboardLayoutView.vue'
 import OverviewView from '@/views/dashboard/OverviewView.vue'
+import InputCryptoView from '@/views/dashboard/InputCryptoView.vue'
+import RunningView from '@/views/dashboard/RunningView.vue'
+import JournalView from '@/views/dashboard/JournalView.vue'
+import EducationView from '@/views/dashboard/EducationView.vue'
+import InputStockView from '@/views/dashboard/InputStockView.vue'
+import InputForexView from '@/views/dashboard/InputForexView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,27 +52,37 @@ const router = createRouter({
         {
           path: '/overview',
           name: 'Over View',
-          component: OverviewView, // Halaman "Overview"
+          component: OverviewView,
         },
         {
           path: '/input-transactions-stock',
           name: 'Input Transactions Stock',
-          component: OverviewView, // Halaman "Overview"
+          component: InputStockView,
         },
         {
           path: '/input-transactions-crypto',
           name: 'Input Transactions Crypto',
-          component: OverviewView, // Halaman "Overview"
+          component: InputCryptoView,
         },
         {
-          path: '/overview',
-          name: 'Over View',
-          component: OverviewView, // Halaman "Overview"
+          path: '/input-transactions-forex',
+          name: 'Input Transactions Forex',
+          component: InputForexView,
         },
         {
-          path: '/overview',
-          name: 'Over View',
-          component: OverviewView, // Halaman "Overview"
+          path: '/running-transactions',
+          name: 'Running Transactions',
+          component: RunningView,
+        },
+        {
+          path: '/journals',
+          name: 'Journals',
+          component: JournalView,
+        },
+        {
+          path: '/education',
+          name: 'Education',
+          component: EducationView,
         },
       ],
     },

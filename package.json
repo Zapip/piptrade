@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.5",
+    "apexcharts": "^4.1.0",
     "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vue3-apexcharts": "^1.8.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
