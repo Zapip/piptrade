@@ -6,7 +6,7 @@
       :class="[isCollapsed ? 'w-24' : 'w-64']">
       <section class="h-16 flex items-center justify-center">
         <HorizontalLogoView :class="[isCollapsed ? 'hidden' : 'block']" />
-        <img :class="[isCollapsed ? 'block' : 'hidden']" src="@/assets/images/Logo.png" alt="Logo" class="h-8" />
+        <img :class="[isCollapsed ? 'block' : 'hidden']" :src="logo" alt="Logo" class="h-8" />
       </section>
 
       <!-- Navigation -->
@@ -70,7 +70,7 @@
           <DarkModeToggle />
           <div class="w-1 h-8 bg-red-50 rounded-2xl"></div>
           <section class="flex gap-2 items-center">
-            <img src="@/assets/images/Zapip.jpg" alt="" class="size-12 rounded-full">
+            <img :src="zapip" alt="" class="size-12 rounded-full">
             <section class="flex flex-col">
               <h1 class="font-bold text-t1 dark:text-t1-dark">{{ profilItem.name }}</h1>
               <p class="text-t2 dark:text-t2-dark">{{ profilItem.email }}</p>
@@ -95,6 +95,8 @@ import HorizontalLogoView from '@/assets/icons/HorizontalLogoView.vue';
 import { ref } from 'vue'
 import { ChartPieIcon, PencilIcon, DocumentChartBarIcon, BookOpenIcon, AcademicCapIcon, ArrowLeftEndOnRectangleIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 import { useRoute } from 'vue-router';
+import zapip from '@/assets/images/Zapip.jpg';
+import logo from '@/assets/images/Logo.png';
 
 const isCollapsed = ref(false)
 const route = useRoute()
