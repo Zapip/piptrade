@@ -84,6 +84,12 @@ const router = createRouter({
           name: 'Education',
           component: EducationView,
         },
+        {
+          path: '/education/detail-education/:id',
+          name: 'Detail Education',
+          component: () => import('../views/dashboard/DetailEducationView.vue'),
+          props: true,
+        },
       ],
     },
     {

@@ -15,9 +15,9 @@
     <div class="flex flex-col gap-2 ">
       <div v-for="(label, index) in chartLabels" :key="index" class="flex items-center gap-2 size-full">
         <div :style="{ backgroundColor: chartOptions.colors[index] }" class="size-4 rounded-full"></div>
-        <section class="flex justify-between items-center size-full ">
-          <span class="text-sm">{{ label }}</span>
-          <span class="font-bold text-sm">{{ chartSeries[index] }}%</span>
+        <section class="flex justify-between items-center size-full">
+          <span class="text-sm text-t2 dark:text-t2-dark">{{ label }}</span>
+          <span class="font-bold text-t1 dark:text-t1-dark text-sm">{{ chartSeries[index] }}%</span>
         </section>
       </div>
     </div>
@@ -36,7 +36,6 @@ const chartLabels = ref(['BTC', 'BBCA', 'XAU/USD', 'WLD', 'PTBA', 'OTHER']);
 
 const chartOptions = ref({
   chart: {
-    type: 'pie',
     background: 'transparent',
   },
   labels: chartLabels.value,

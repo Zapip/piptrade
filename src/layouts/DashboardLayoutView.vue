@@ -46,7 +46,7 @@
         </div>
         <span
           class="w-full truncate transition-opacity duration-300 p-3 flex rounded-lg gap-2 items-center text-gray-t1 hover:bg-blue-50 hover:text-button text-t1 dark:text-t1-dark dark:hover:text-buttonHover dark:hover:bg-fourground-dark">
-          <ArrowLeftEndOnRectangleIcon class="flex-shrink-0 h-5 w-5  group-hover:text-blue-500" aria-hidden="true" />
+          <ArrowLeftEndOnRectangleIcon class="flex-shrink-0 h-5 w-5  group-hover:text-buttonHover" aria-hidden="true" />
           <section :class="{ 'hidden': isCollapsed }">
             Sign Out
           </section>
@@ -110,7 +110,7 @@ const menuItems = [
 ]
 
 const profilItem = { name: 'M. Zafif Hilmi Al-hadi', email: 'zafif3165@gmail.com' }
-const isActive = (itemTo) => route.path === itemTo;
+const isActive = (itemTo) => route.path.startsWith(itemTo);
 
 const toggleSidebar = () => {
   isCollapsed.value = !isCollapsed.value
