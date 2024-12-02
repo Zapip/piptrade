@@ -93,7 +93,7 @@ import DarkModeToggle from '@/assets/icons/DarkModeToggle.vue';
 import { Bars3CenterLeftIcon } from '@heroicons/vue/24/solid';
 import HorizontalLogoView from '@/assets/icons/HorizontalLogoView.vue';
 import { ref } from 'vue'
-import { ChartPieIcon, DocumentIcon, WalletIcon, CurrencyDollarIcon, DocumentChartBarIcon, BookOpenIcon, AcademicCapIcon, ArrowLeftEndOnRectangleIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
+import { ChartPieIcon, PencilIcon, DocumentChartBarIcon, BookOpenIcon, AcademicCapIcon, ArrowLeftEndOnRectangleIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 import { useRoute } from 'vue-router';
 
 const isCollapsed = ref(false)
@@ -101,9 +101,7 @@ const route = useRoute()
 
 const menuItems = [
   { name: 'Overview', to: '/overview', icon: ChartPieIcon },
-  { name: 'Input Transaction Stock', to: '/input-transactions-stock', icon: DocumentIcon },
-  { name: 'Input Transaction Crypto', to: '/input-transactions-crypto', icon: WalletIcon },
-  { name: 'Input Transaction Forex', to: '/input-transactions-forex', icon: CurrencyDollarIcon },
+  { name: 'Input Transaction', to: '/input-transactions', icon: PencilIcon },
   { name: 'Running Transaction', to: '/running-transactions', icon: DocumentChartBarIcon },
   { name: 'Journal', to: '/journals', icon: BookOpenIcon },
   { name: 'Education', to: '/education', icon: AcademicCapIcon },

@@ -2,12 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LandingPage from '@/views/LandingPageView.vue'
 import DashboardLayoutView from '@/layouts/DashboardLayoutView.vue'
 import OverviewView from '@/views/dashboard/OverviewView.vue'
-import InputCryptoView from '@/views/dashboard/InputCryptoView.vue'
+import InputCryptoView from '@/views/dashboard/InputTransactionsView.vue'
 import RunningView from '@/views/dashboard/RunningView.vue'
 import JournalView from '@/views/dashboard/JournalView.vue'
 import EducationView from '@/views/dashboard/EducationView.vue'
-import InputStockView from '@/views/dashboard/InputStockView.vue'
-import InputForexView from '@/views/dashboard/InputForexView.vue'
+import InputTransactionsView from '@/views/dashboard/InputTransactionsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,19 +54,9 @@ const router = createRouter({
           component: OverviewView,
         },
         {
-          path: '/input-transactions-stock',
-          name: 'Input Transactions Stock',
-          component: InputStockView,
-        },
-        {
-          path: '/input-transactions-crypto',
-          name: 'Input Transactions Crypto',
-          component: InputCryptoView,
-        },
-        {
-          path: '/input-transactions-forex',
-          name: 'Input Transactions Forex',
-          component: InputForexView,
+          path: '/input-transactions',
+          name: 'Input Transactions',
+          component: InputTransactionsView,
         },
         {
           path: '/running-transactions',

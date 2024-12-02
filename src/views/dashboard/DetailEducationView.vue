@@ -23,7 +23,8 @@
       <p>{{ course.description }}</p>
       <section class="w-full flex justify-end">
 
-        <button class="flex p-2 gap-1 items-center justify-center bg-button hover:bg-buttonHover rounded-lg">
+        <button
+          class="flex p-2 gap-1 items-center justify-center bg-button hover:bg-buttonHover rounded-lg text-white mt-12">
           <CheckCircleIcon class="size-5" /> Mark Complete
         </button>
       </section>

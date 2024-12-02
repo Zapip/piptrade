@@ -27,7 +27,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Username</label>
           <div class="relative">
             <input v-model="form.username" type="text"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+              class="w-full px-4 py-2 border bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter your username">
             <UserIcon class="size-5 text-primary absolute left-3 top-2.5" />
           </div>
@@ -39,7 +39,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Email Address</label>
           <div class="relative">
             <input v-model="form.email" type="email"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter your email">
             <EnvelopeIcon class="size-5 text-primary absolute left-3 top-2.5" />
           </div>
@@ -50,7 +50,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Investment/Trading Experience Level</label>
           <div class="relative">
             <select v-model="form.experienceLevel"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10 appearance-none">
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10 appearance-none">
               <option value="" disabled selected>Select an option</option>
               <option value="beginner">Beginner</option>
               <option value="intermediate">Intermediate</option>
@@ -66,7 +66,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Create a Password</label>
           <div class="relative">
             <input v-model="form.password" :type="showPassword ? 'text' : 'password'"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter your password">
             <LockClosedIcon class="size-5 text-primary absolute left-3 top-2.5" />
             <button type="button" @click="showPassword = !showPassword"
@@ -82,7 +82,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Re-enter Password</label>
           <div class="relative">
             <input v-model="form.confirmPassword" :type="showConfirmPassword ? 'text' : 'password'"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pl-10"
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pl-10"
               placeholder="Re-enter your password">
             <LockClosedIcon class="size-5 text-primary absolute left-3 top-2.5" />
             <button type="button" @click="showConfirmPassword = !showConfirmPassword"

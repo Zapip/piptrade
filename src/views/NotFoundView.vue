@@ -3,8 +3,8 @@
     <div class="max-w-md w-full space-y-8 text-center">
       <div class="space-y-4">
         <h1 class="text-9xl font-extrabold text-primary">404</h1>
-        <h2 class="text-4xl font-bold text-gray-900">Page Not Found</h2>
-        <p class="text-xl text-gray-600">Oops! The page you're looking for doesn't exist.</p>
+        <h2 class="text-4xl font-bold text-t1 dark:text-t1-dark">Page Not Found</h2>
+        <p class="text-xl text-t2 dark:text-t2-dark">Oops! The page you're looking for doesn't exist.</p>
       </div>
       <div class="mt-8">
         <router-link to="/"

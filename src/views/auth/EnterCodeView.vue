@@ -24,7 +24,7 @@
       <section class="flex justify-center gap-3">
         <input v-for="(digit, index) in code" :key="index" type="text" maxlength="1" v-model="code[index]"
           @keydown="handleKey(index, $event)"
-          class="w-12 h-16 text-center border border-primary rounded-lg text-lg font-semibold focus:ring-2 focus:ring-button focus:outline-none" />
+          class="w-12 h-16 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark text-center border border-primary rounded-lg text-lg font-semibold focus:ring-2 focus:ring-button focus:outline-none" />
       </section>
 
       <section class="flex flex-col gap-2 items-center">

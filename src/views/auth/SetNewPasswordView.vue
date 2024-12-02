@@ -25,8 +25,8 @@
         <section>
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">New Password</label>
           <div class="relative">
-            <input v-model="password" :type="showPassword ? 'text' : 'password'"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+            <input v-model="NewPassword" :type="showPassword ? 'text' : 'password'"
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter new password">
             <LockClosedIcon class="size-5 text-primary absolute left-3 top-2.5" />
             <button type="button" @click="showPassword = !showPassword"
@@ -39,8 +39,8 @@
         <section>
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Confirm Password</label>
           <div class="relative">
-            <input v-model="password" :type="showConfirmPassword ? 'text' : 'password'"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+            <input v-model="ConfirmPassword" :type="showConfirmPassword ? 'text' : 'password'"
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter your new password again here">
             <LockClosedIcon class="size-5 text-primary absolute left-3 top-2.5" />
             <button type="button" @click="showConfirmPassword = !showConfirmPassword"
@@ -73,10 +73,11 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const showPassword = ref(false);
 const showConfirmPassword = ref(false);
-const password = ref('');
+const NewPassword = ref('');
+const ConfirmPassword = ref('');
 
 const handleSetNewPassword = () => {
-  console.log('New password set:', password.value);
+  console.log('New password set:', NewPassword.value, ConfirmPassword.value);
   router.push('/signin');
 };
 </script>

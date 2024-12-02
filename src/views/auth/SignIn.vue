@@ -25,7 +25,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Username/Email</label>
           <div class="relative">
             <input v-model="form.emailOrUsername" type="text"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+              class="w-full px-4 py-2 border bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter your email address or username">
             <UserIcon class="size-5 text-primary absolute left-3 top-2.5" />
           </div>
@@ -36,7 +36,7 @@
           <label class="block font-medium text-t1 dark:text-t1-dark mb-1">Password</label>
           <div class="relative">
             <input v-model="form.password" :type="showPassword ? 'text' : 'password'"
-              class="w-full px-4 py-2 border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
+              class="w-full px-4 py-2 bg-input dark:bg-input-dark text-t1 dark:text-t1-dark border border-primary rounded-lg focus:ring-2 focus:ring-button focus:border-button pl-10"
               placeholder="Enter your password">
             <LockClosedIcon class="size-5 text-primary absolute left-3 top-2.5" />
             <button type="button" @click="showPassword = !showPassword"
