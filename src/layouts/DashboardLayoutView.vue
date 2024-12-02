@@ -6,7 +6,7 @@
       :class="[isCollapsed ? 'w-24' : 'w-64']">
       <section class="h-16 flex items-center justify-center">
         <HorizontalLogoView :class="[isCollapsed ? 'hidden' : 'block']" />
-        <img :class="[isCollapsed ? 'block' : 'hidden']" src="@/assets/images/logo.png" alt="Logo" class="h-8" />
+        <img :class="[isCollapsed ? 'block' : 'hidden']" src="@/assets/images/Logo.png" alt="Logo" class="h-8" />
       </section>
 
       <!-- Navigation -->

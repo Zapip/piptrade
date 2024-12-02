@@ -70,7 +70,7 @@
   </footer>
 </template>
 <script>
-import Logo from '@/assets/images/logo.png';
+import Logo from '@/assets/images/Logo.png';
 import { HomeIcon, StarIcon, QuestionMarkCircleIcon, UsersIcon, PhoneIcon, AtSymbolIcon } from '@heroicons/vue/24/solid';
 export default {
   name: 'FooterView',
