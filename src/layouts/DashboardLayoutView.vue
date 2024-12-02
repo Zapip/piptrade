@@ -70,7 +70,7 @@
           <DarkModeToggle />
           <div class="w-1 h-8 bg-red-50 rounded-2xl"></div>
           <section class="flex gap-2 items-center">
-            <img src="@/assets/images/zapip.jpg" alt="" class="size-12 rounded-full">
+            <img src="@/assets/images/Zapip.jpg" alt="" class="size-12 rounded-full">
             <section class="flex flex-col">
               <h1 class="font-bold text-t1 dark:text-t1-dark">{{ profilItem.name }}</h1>
               <p class="text-t2 dark:text-t2-dark">{{ profilItem.email }}</p>

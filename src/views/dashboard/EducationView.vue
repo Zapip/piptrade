@@ -48,10 +48,10 @@
 
 <script setup>
 import { ref } from 'vue'
-import Thumbnail1 from '@/assets/images/thumbnail (1).jpg'
-import Thumbnail2 from '@/assets/images/thumbnail (2).jpg'
-import Thumbnail3 from '@/assets/images/thumbnail (3).jpg'
-import Thumbnail4 from '@/assets/images/thumbnail (4).jpg'
+import Thumbnail1 from '@/assets/images/thumbnail1.jpg'
+import Thumbnail2 from '@/assets/images/thumbnail2.jpg'
+import Thumbnail3 from '@/assets/images/thumbnail3.jpg'
+import Thumbnail4 from '@/assets/images/thumbnail4.jpg'
 
 const courses = ref([
   {

@@ -8,16 +8,16 @@
 </template>
 
 <script>
-import image1 from '@/assets/images/HeroImage (1).jpeg';
-import image2 from '@/assets/images/HeroImage (2).png';
-import image3 from '@/assets/images/HeroImage (3).png';
-import image4 from '@/assets/images/HeroImage (4).jpeg';
-import image5 from '@/assets/images/HeroImage (5).jpeg';
-import image6 from '@/assets/images/HeroImage (6).jpeg';
-import image7 from '@/assets/images/HeroImage (7).jpeg';
-import image8 from '@/assets/images/HeroImage (8).jpeg';
-import image9 from '@/assets/images/HeroImage (9).jpeg';
-import image10 from '@/assets/images/HeroImage (10).jpeg';
+import image1 from '@/assets/images/HeroImage1.jpeg';
+import image2 from '@/assets/images/HeroImage2.png';
+import image3 from '@/assets/images/HeroImage3.png';
+import image4 from '@/assets/images/HeroImage4.jpeg';
+import image5 from '@/assets/images/HeroImage5.jpeg';
+import image6 from '@/assets/images/HeroImage6.jpeg';
+import image7 from '@/assets/images/HeroImage7.jpeg';
+import image8 from '@/assets/images/HeroImage8.jpeg';
+import image9 from '@/assets/images/HeroImage9.jpeg';
+import image10 from '@/assets/images/HeroImage10.jpeg';
 
 export default {
   name: 'HeroImageView',
