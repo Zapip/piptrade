@@ -1,9 +1,9 @@
 <template>
   <article class="flex flex-col gap-4">
     <section class="flex flex-col gap-2">
-      <h1 class="text-4xl font-semibold text-t1 dark:text-t1-dark w-full">Cryptocurrency Transaction Input</h1>
+      <h1 class="text-4xl font-semibold text-t1 dark:text-t1-dark w-full">Input Transaction</h1>
       <h2 class="text-2xl text-t2 dark:text-t2-dark w-full">
-        Come on, enter your crypto transaction data here and see the projections of the transactions you make!
+        Come on, enter your transaction data here and see the projections of the transactions you make!
       </h2>
     </section>
 
@@ -95,64 +95,70 @@
       <section
         class="w-full h-fit bg-background dark:bg-background-dark rounded-3xl flex flex-col gap-6 p-6 items-center shadow">
         <h3 class="text-2xl font-bold text-primary">Transaction Projections</h3>
-        <section class="flex flex-col gap-3 w-full">
-          <section class="flex flex-col gap-1 ">
-            <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Take Profit and StopLoss</h4>
-            <p class="text-t2 dark:text-t2-dark">Based on the data you entered, here are the recommended levels for Take
-              Profit and Stop Loss.</p>
-          </section>
-          <section class="flex gap-6">
-            <section class="flex gap-6 w-full">
-              <section v-for="(item, index) in projections.tpsl" :key="index"
-                :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
-                <p class="text-sm text-t2 dark:text-t2-dark">{{ item.type }} {{ item.percentage }}%</p>
-                <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">Rp{{ item.price.toLocaleString() }}</h5>
+        <section v-if="!isFormComplete" class="text-center text-t2 dark:text-t2-dark text-lg">
+          Fill in the transaction form first and see your transaction projections.
+        </section>
+        <section v-else>
+          <section class="flex flex-col gap-3 w-full">
+            <section class="flex flex-col gap-1 ">
+              <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Take Profit and StopLoss</h4>
+              <p class="text-t2 dark:text-t2-dark">Based on the data you entered, here are the recommended levels for
+                Take
+                Profit and Stop Loss.</p>
+            </section>
+            <section class="flex gap-6">
+              <section class="flex gap-6 w-full">
+                <section v-for="(item, index) in projections.tpsl" :key="index"
+                  :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
+                  <p class="text-sm text-t2 dark:text-t2-dark">{{ item.type }} {{ item.percentage }}%</p>
+                  <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">Rp{{ item.price.toLocaleString() }}</h5>
+                </section>
               </section>
             </section>
           </section>
-        </section>
-        <section class="flex flex-col gap-3 w-full">
-          <section class="flex flex-col gap-1">
-            <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Risk and Reward</h4>
-            <p class="text-t2 dark:text-t2-dark">Minimum Risk Reward 1:2
-              Profit and Stop Loss.</p>
-          </section>
-          <section class="flex gap-6">
-            <section class="flex gap-6 w-full">
-              <section v-for="(item, index) in projections.rr" :key="index"
-                :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
-                <p class="text-sm text-t2 dark:text-t2-dark"> {{ item.content }}</p>
-                <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">{{ item.num }}</h5>
+          <section class="flex flex-col gap-3 w-full">
+            <section class="flex flex-col gap-1">
+              <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Risk and Reward</h4>
+              <p class="text-t2 dark:text-t2-dark">Minimum Risk Reward 1:2
+                Profit and Stop Loss.</p>
+            </section>
+            <section class="flex gap-6">
+              <section class="flex gap-6 w-full">
+                <section v-for="(item, index) in projections.rr" :key="index"
+                  :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
+                  <p class="text-sm text-t2 dark:text-t2-dark"> {{ item.content }}</p>
+                  <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">{{ item.num }}</h5>
+                </section>
               </section>
             </section>
           </section>
-        </section>
-        <section class="flex flex-col gap-3 w-full">
-          <section class="flex flex-col gap-1">
-            <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Risk Per Trade</h4>
-            <p class="text-t2 dark:text-t2-dark">Maximum 2% of capital.</p>
-          </section>
-          <section class="flex gap-6">
-            <section class="flex gap-6 w-full">
-              <section v-for="(item, index) in projections.rrptd" :key="index"
-                :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
-                <p class="text-sm text-t2 dark:text-t2-dark">{{ item.percentage }}%</p>
-                <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">Rp{{ item.price.toLocaleString() }}</h5>
+          <section class="flex flex-col gap-3 w-full">
+            <section class="flex flex-col gap-1">
+              <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Risk Per Trade</h4>
+              <p class="text-t2 dark:text-t2-dark">Maximum 2% of capital.</p>
+            </section>
+            <section class="flex gap-6">
+              <section class="flex gap-6 w-full">
+                <section v-for="(item, index) in projections.rrptd" :key="index"
+                  :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
+                  <p class="text-sm text-t2 dark:text-t2-dark">{{ item.percentage }}%</p>
+                  <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">Rp{{ item.price.toLocaleString() }}</h5>
+                </section>
               </section>
             </section>
           </section>
-        </section>
-        <section class="flex flex-col gap-3 w-full">
-          <section class="flex flex-col gap-1">
-            <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Capital Allocation</h4>
-            <p class="text-t2 dark:text-t2-dark">Maximum funds used 25%-30% of capital</p>
-          </section>
-          <section class="flex gap-6">
-            <section class="flex gap-6 w-full">
-              <section v-for="(item, index) in projections.ca" :key="index"
-                :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
-                <p class="text-sm text-t2 dark:text-t2-dark">{{ item.content }}</p>
-                <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">{{ item.price.toLocaleString() }}</h5>
+          <section class="flex flex-col gap-3 w-full">
+            <section class="flex flex-col gap-1">
+              <h4 class="text-xl font-semibold text-t1 dark:text-t1-dark">Capital Allocation</h4>
+              <p class="text-t2 dark:text-t2-dark">Maximum funds used 25%-30% of capital</p>
+            </section>
+            <section class="flex gap-6">
+              <section class="flex gap-6 w-full">
+                <section v-for="(item, index) in projections.ca" :key="index"
+                  :class="['flex flex-col gap-3 p-4 rounded-xl flex-grow', item.color]">
+                  <p class="text-sm text-t2 dark:text-t2-dark">{{ item.content }}</p>
+                  <h5 class="font-semibold text-xl text-t1 dark:text-t1-dark">{{ item.price.toLocaleString() }}</h5>
+                </section>
               </section>
             </section>
           </section>
@@ -212,6 +218,10 @@ const totalSpend = computed(() => {
   }
   return 0
 })
+
+const isFormComplete = computed(() => {
+  return form.value.assetType && form.value.asset && form.value.quantity && form.value.priceasset;
+});
 
 const handleSubmit = () => {
   console.log('Form submitted:', form.value)
