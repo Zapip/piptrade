@@ -95,8 +95,8 @@ import HorizontalLogoView from '@/assets/icons/HorizontalLogoView.vue';
 import { ref } from 'vue'
 import { ChartPieIcon, PencilIcon, DocumentChartBarIcon, BookOpenIcon, AcademicCapIcon, ArrowLeftEndOnRectangleIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 import { useRoute } from 'vue-router';
-import zapip from '@/assets/images/Zapip.jpg';
-import logo from '@/assets/images/Logo.png';
+import zapip from '@/assets/images/zapip.jpg';
+import logo from '@/assets/images/logo.png';
 
 const isCollapsed = ref(false)
 const route = useRoute()

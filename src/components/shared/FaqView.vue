@@ -5,7 +5,7 @@
       class="bg-background dark:bg-background-dark rounded-2xl hover:bg-buttonHover transition  group">
       <div @click="toggle(index)" class="flex justify-between items-center p-4  duration-200">
         <section class="flex items-center gap-2">
-          <img src="@/assets/images/Logo.png" alt="Logo PipTrade">
+          <img src="@/assets/images/logo.png" alt="Logo PipTrade">
           <h3 class="text-t1 dark:text-t1-dark group-hover:text-white">{{ faq.question }}</h3>
         </section>
         <span class="text-t1 dark:text-t1-dark group-hover:text-white">
