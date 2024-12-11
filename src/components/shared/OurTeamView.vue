@@ -11,7 +11,7 @@
   </section>
 </template>
 <script>
-import zapip from '@/assets/images/Zapip.jpg';
+import zapip from '@/assets/images/zapip.jpg';
 import chatgpt from '@/assets/images/chatgpt.png';
 import gemini from '@/assets/images/gemini.png';
 export default {
