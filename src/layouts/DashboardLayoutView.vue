@@ -96,7 +96,7 @@ import { ref } from 'vue'
 import { ChartPieIcon, PencilIcon, DocumentChartBarIcon, BookOpenIcon, AcademicCapIcon, ArrowLeftEndOnRectangleIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 import { useRoute } from 'vue-router';
 import zapip from '@/assets/images/zapip.jpg';
-import logo from '@/assets/images/logo.png';
+import logo from '@/assets/images/logo_piptrade.png';
 
 const isCollapsed = ref(false)
 const route = useRoute()
